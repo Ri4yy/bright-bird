@@ -1,0 +1,184 @@
+.info-block {
+    min-height: 720px;
+
+    @media(max-width: $breakpoint768) {
+        min-height: 480px;
+    }
+ 
+    &__wrapper {
+        display: flex;
+        min-height: inherit;
+
+        @media(max-width: $breakpoint768) {
+            flex-direction: column;
+        }
+    }
+    &__sidebar {
+        position: relative;
+        flex-shrink: 0;
+        width: 350px;
+        border-right: 1px solid rgba(40, 0, 0, 0.2);
+
+        @media(max-width: $breakpoint1024) {
+            width: 320px;
+        }
+        @media(max-width: $breakpoint768) {
+            padding: 48px 0 32px 0;
+
+            width: 100%;
+            border-right: none;
+            border-bottom: 1px solid rgba(40, 0, 0, 0.2);
+                
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                top: 1px;
+                width: 16px;
+                height: 100%;
+                border-bottom: 1px solid rgba(40, 0, 0, 0.2);
+            }
+            &::before {
+                left: -16px;
+            }
+            &::after {
+                right: -16px;
+            }
+        } 
+        @media(max-width: $breakpoint600) {
+            padding: 24px 0 20px 0;
+        }
+    }
+    &__breadcrumbs {
+        padding: 30px 0 32px;
+
+        @media(max-width: $breakpoint768) {
+            display: none;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+
+        @media(max-width: $breakpoint768) {
+            flex-direction: row;
+        }        
+        @media(max-width: $breakpoint600) {
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        &-item {
+            @media(max-width: $breakpoint768) {
+                display: flex;
+                justify-content: center;
+                flex-grow: 1;
+            }
+        }
+
+        &-link {
+            display: block;
+            padding: 12px 24px;
+
+            font-weight: 600;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            color: var(--main-text);
+
+            @media(max-width: $breakpoint768) {
+                text-align: center;
+                width: 100%;
+                padding: 12px 0;
+            }
+            @media(max-width: $breakpoint480) {
+                font-size: 1rem;
+            }
+
+            &--active {
+                color: var(--accent-color);
+            }
+        }
+    }
+
+    &__content {
+        position: relative;
+        padding: 108px 0 80px 70px;
+
+        @media(max-width: $breakpoint1024) {
+            padding: 40px 0 80px 40px;
+        }
+        @media(max-width: $breakpoint768) {
+            padding: 40px 0;
+            background: #F6F6F6;
+
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                top: 0;
+                width: 16px;
+                height: 100%;
+                background: #F6F6F6;
+            }
+            &::before {
+                left: -16px;
+            }
+            &::after {
+                right: -16px;
+            }
+        }
+
+        &:has(.order-details) {
+            padding-top: 40px;
+        }
+    }
+}
+
+.info-content {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        @media(max-width: $breakpoint600) {
+            gap: 32px;
+        }
+    }
+    &__title {
+        font-family: $font-family-secondary;
+        font-weight: 700;
+        font-size: 2.5rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: var(--accent-color);
+
+        @media(max-width: $breakpoint600) {
+            font-size: 1.5rem;
+        }
+    }
+    &__item {
+        
+    }
+    &__text {
+        font-weight: 500;
+        font-size: 1.25rem;
+
+        @media(max-width: $breakpoint600) {
+            font-size: 1rem;
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+    }
+    &__link {
+        font-weight: 400;
+        font-size: 1.25rem;
+        text-decoration: underline !important;
+        color: var(--main-text-2);
+
+        @media(max-width: $breakpoint600) {
+            font-size: 1rem;
+        }
+    }
+}

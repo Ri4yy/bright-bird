@@ -1,0 +1,45 @@
+.similar-products {
+
+}
+
+.similar-swiper {
+    padding: 16px;
+    margin: -16px;
+
+    &:hover {
+        .similar-swiper__btn {
+            opacity: 1;
+            top: 50%;
+        }
+    }
+
+    &__btn  {
+        position: absolute;
+        top: calc(50% + 10px);
+        transform: translateY(-50%);
+        z-index: 2;
+
+        cursor: pointer;
+
+        width: 64px;
+        height: 64px;
+
+        border-radius: 6px;
+        background: var(--main-color);
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, top 0.3s ease-in-out;
+
+        &--next {
+            right: 16px;
+        }
+        &--prev {
+            left: 16px;
+        }
+    }
+}

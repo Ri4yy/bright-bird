@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Страница товара</title>
+    <link rel="stylesheet" href="../assets/libs/swiper-bundle.min.css">
+    <link rel="stylesheet" href="../assets/libs/simplebar.css">
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <header class="header header--secondary">
+        <div class="container">
+            <div class="header__wrapper">
+                <div class="header__left">
+                    <button class="header__catalog-btn" data-menu-open>
+                        <div class="header__catalog-btn-menu">
+                            <span></span>
+                            <span></span>
+                            <span></span>
+                        </div>
+                        <span class="header__catalog-btn-text">Каталог</span>
+                    </button>
+                    <nav class="menu">
+                        <ul class="menu-nav">
+                            <li class="menu-nav__item">
+                                <a href="about.html" class="menu-nav__link">О бренде</a>
+                            </li>
+                            <li class="menu-nav__item">
+                                <a href="" class="menu-nav__link">Скидки</a>
+                            </li>
+                        </ul>
+                    </nav>
+                </div>
+                <a href="../index.html" class="header__logo">
+                    <img src="../assets/img/icons/h-logo-dark.svg" alt="logo">
+                </a>
+                <div class="header__right">
+                    <button class="header__search-btn" data-search-open>
+                        <svg width="26" height="28" viewBox="0 0 26 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10.833 1C16.2521 1 20.667 5.45142 20.667 10.9688C20.667 16.4861 16.2521 20.9375 10.833 20.9375C5.41403 20.9373 1 16.486 1 10.9688C1 5.45152 5.41403 1.00017 10.833 1Z" stroke-width="2" />
+                            <path d="M16.667 18.5625L25.0003 27" stroke-width="2" />
+                        </svg>
+                        <span class="header__search-text">Поиск</span>
+                    </button>
+                    <button class="header__login-btn" data-login-open>
+                        <svg width="23" height="29" viewBox="0 0 23 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11.5 14.1707C15.1244 14.1707 18.0625 11.2224 18.0625 7.58537C18.0625 3.94837 15.1244 1 11.5 1C7.87563 1 4.9375 3.94837 4.9375 7.58537C4.9375 11.2224 7.87563 14.1707 11.5 14.1707Z" stroke-width="2" stroke-miterlimit="10" />
+                            <path d="M22 24.607C22 20.6782 18.8202 17.4634 14.934 17.4634H8.06595C4.17983 17.4634 1 20.6782 1 24.607V28H22V24.607Z" stroke-width="2" stroke-miterlimit="10" />
+                        </svg>
+                        <span class="header__login-text">Войти</span>
+                    </button>
+                    <a href="favorites.html" class="header__favorites-btn">
+                        <svg width="43" height="37" viewBox="0 0 43 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M30.9824 0.050293C37.1854 0.0505337 42.1494 4.92032 42.1494 11.0093C42.1494 14.6593 41.0635 17.6101 37.9844 21.2388C35.2925 24.4111 31.075 28.1042 24.7256 33.2407L21.8721 35.5327L21.1309 36.1392L21.0996 36.1646L21.0684 36.1392L20.3271 35.5327C12.3604 29.1698 7.2913 24.8643 4.21484 21.2388C1.13571 17.6101 0.0498225 14.6593 0.0498047 11.0093C0.0498047 4.92032 5.01382 0.0505334 11.2168 0.050293C16.2721 0.050293 19.1224 2.81744 21.0996 4.99561C23.0768 2.81744 25.9271 0.050293 30.9824 0.050293ZM30.9824 2.57471C26.683 2.57471 24.3488 5.10318 22.4961 7.16357L22.4951 7.1626L21.1377 8.73877L21.0996 8.78271L21.0615 8.73877L19.7031 7.1626V7.16357C17.8504 5.10318 15.5162 2.57471 11.2168 2.57471C6.42608 2.57495 2.62012 6.31066 2.62012 11.0093C2.62014 14.0855 3.602 16.6503 6.40625 19.9009C9.20896 23.1497 13.8288 27.0793 21.0996 32.8843C28.3704 27.0793 32.9903 23.1497 35.793 19.9009C38.5972 16.6503 39.5791 14.0855 39.5791 11.0093C39.5791 6.31066 35.7731 2.57495 30.9824 2.57471Z" stroke-width="0.1" />
+                        </svg>
+                        <span class="header__favorites-count">0</span>
+                    </a>
+                    <a href="" class="header__cart-btn" data-cart-open>
+                        <svg width="28" height="36" viewBox="0 0 28 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M7.20077 9.98921V7.21443C7.18206 6.285 7.34276 5.36092 7.67367 4.49508C8.00458 3.62924 8.49921 2.83864 9.12924 2.16854C9.75927 1.49843 10.5123 0.961973 11.3453 0.589868C12.1783 0.217762 13.0749 0.0173157 13.9837 0C14.8926 0.0173157 15.7891 0.217762 16.6221 0.589868C17.4551 0.961973 18.2082 1.49843 18.8382 2.16854C19.4682 2.83864 19.9629 3.62924 20.2938 4.49508C20.6247 5.36092 20.7854 6.285 20.7667 7.21443V9.98921H25.455C25.6696 9.98866 26.2364 9.98921 26.2364 9.98921C26.2364 9.98921 26.2864 10.575 26.3015 10.7939L27.9295 35.0732C27.9444 35.3026 28 36 28 36C28 36 27.4574 36 27.1426 36H0.900769C0.67626 36 0 36 0 36L0.054257 35.1343V35.0732L1.66588 10.7939C1.68101 10.575 1.72016 9.98921 1.72016 9.98921C1.72016 9.98921 2.29786 9.98866 2.5124 9.98921H7.20077ZM9.74573 9.98921H18.2217V7.21443C18.2553 6.0304 17.8277 4.8812 17.033 4.01951C16.2383 3.15783 15.1414 2.65421 13.9837 2.61939C12.826 2.65421 11.7292 3.15783 10.9344 4.01951C10.1397 4.8812 9.71214 6.0304 9.74573 7.21443V9.98921ZM2.7186 33.3973H25.2543L23.8705 12.5864H4.09689L2.7186 33.3973Z" />
+                        </svg>
+                        <span class="header__cart-count">0</span>
+                    </a>
+                    <button class="btn-menu" data-menu-open>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- catalog-menu -->
+    <div class="catalog-menu">
+        <div class="catalog-menu__wrapper">
+            <div class="catalog-menu__wrapper-main">
+                <button class="catalog-menu__wrapper-close">
+                    <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.707031 0.707031L14.207 14.207M27.707 27.707L14.207 14.207M14.207 14.207L27.707 0.707031L0.707031 27.707" stroke-width="2" />
+                    </svg>
+                </button>
+                <button class="catalog-menu__wrapper-login" data-login-open>
+                    <svg width="23" height="29" viewBox="0 0 23 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M11.5 14.1707C15.1244 14.1707 18.0625 11.2224 18.0625 7.58537C18.0625 3.94837 15.1244 1 11.5 1C7.87563 1 4.9375 3.94837 4.9375 7.58537C4.9375 11.2224 7.87563 14.1707 11.5 14.1707Z" stroke="#FF0090" stroke-width="2" stroke-miterlimit="10" />
+                        <path d="M22 24.607C22 20.6782 18.8202 17.4634 14.934 17.4634H8.06595C4.17983 17.4634 1 20.6782 1 24.607V28H22V24.607Z" stroke="#FF0090" stroke-width="2" stroke-miterlimit="10" />
+                    </svg>
+                    <span class="catalog-menu__wrapper-login-text">Войти в личный кабинет</span>
+                </button>
+                <button class="header__search-btn header__search-btn--mobile" data-search-open>
+                    <svg width="26" height="28" viewBox="0 0 26 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M10.833 1C16.2521 1 20.667 5.45142 20.667 10.9688C20.667 16.4861 16.2521 20.9375 10.833 20.9375C5.41403 20.9373 1 16.486 1 10.9688C1 5.45152 5.41403 1.00017 10.833 1Z" stroke="#280000" stroke-width="2" />
+                        <path d="M16.667 18.5625L25.0003 27" stroke="#280000" stroke-width="2" />
+                    </svg>
+                    <span class="header__search-text">Поиск</span>
+                </button>
+                <ul class="catalog-menu__list">
+                    <li class="catalog-menu__list-item">
+                        <a href="catalog.html" class="catalog-menu__list-link catalog">Смотреть все</a>
+                    </li>
+                    <li class="catalog-menu__list-item">
+                        <a href="" class="catalog-menu__list-link">новинки</a>
+                    </li>
+                    <li class="catalog-menu__list-item">
+                        <a href="" class="catalog-menu__list-link">хиты продаж</a>
+                    </li>
+                    <li class="catalog-menu__list-item">
+                        <a href="" class="catalog-menu__list-link active">скидки</a>
+                    </li>
+                    <li class="catalog-menu__list-item">
+                        <div class="catalog-menu__list-item-top">
+                            <a href="" class="catalog-menu__list-link">коллекции</a>
+                            <button class="catalog-menu__list-item-top-btn">
+                                <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.07088 8.07111C8.4614 7.68059 8.4614 7.04742 8.07087 6.6569L1.70689 0.292965C1.31636 -0.0975573 0.683195 -0.0975547 0.292672 0.292971C-0.0978507 0.683497 -0.097848 1.31666 0.292678 1.70718L5.94956 7.36402L0.292725 13.0209C-0.0977973 13.4114 -0.0977946 14.0446 0.292731 14.4351C0.683257 14.8256 1.31642 14.8256 1.70695 14.4351L8.07088 8.07111ZM6.36377 7.36401L6.36377 8.36401L7.36377 8.36401L7.36377 7.36401L7.36377 6.36401L6.36377 6.36401L6.36377 7.36401Z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="catalog-menu__list-dropdown">
+                            <ul class="catalog-menu__list-dropdown-list">
+                                <li class="catalog-menu__list-dropdown-item">
+                                    <a href="payment.html" class="catalog-menu__list-dropdown-link">Оплата</a>
+                                </li>
+                                <li class="catalog-menu__list-dropdown-item">
+                                    <a href="delivery.html" class="catalog-menu__list-dropdown-link">Доставка</a>
+                                </li>
+                                <li class="catalog-menu__list-dropdown-item">
+                                    <a href="exchange.html" class="catalog-menu__list-dropdown-link">Возврат и обмен</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="catalog-menu__list-item">
+                        <a href="" class="catalog-menu__list-link">костюмы</a>
+                    </li>
+                    <li class="catalog-menu__list-item">
+                        <a href="" class="catalog-menu__list-link">лонгсливы</a>
+                    </li>
+                    <li class="catalog-menu__list-item">
+                        <a href="" class="catalog-menu__list-link">топы</a>
+                    </li>
+                    <li class="catalog-menu__list-item">
+                        <a href="" class="catalog-menu__list-link">пиджаки</a>
+                    </li>
+                    <li class="catalog-menu__list-item">
+                        <div class="catalog-menu__list-item-top">
+                            <a href="" class="catalog-menu__list-link">покупателям</a>
+                            <button class="catalog-menu__list-item-top-btn">
+                                <svg width="9" height="15" viewBox="0 0 9 15" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M8.07088 8.07111C8.4614 7.68059 8.4614 7.04742 8.07087 6.6569L1.70689 0.292965C1.31636 -0.0975573 0.683195 -0.0975547 0.292672 0.292971C-0.0978507 0.683497 -0.097848 1.31666 0.292678 1.70718L5.94956 7.36402L0.292725 13.0209C-0.0977973 13.4114 -0.0977946 14.0446 0.292731 14.4351C0.683257 14.8256 1.31642 14.8256 1.70695 14.4351L8.07088 8.07111ZM6.36377 7.36401L6.36377 8.36401L7.36377 8.36401L7.36377 7.36401L7.36377 6.36401L6.36377 6.36401L6.36377 7.36401Z" />
+                                </svg>
+                            </button>
+                        </div>
+                        <div class="catalog-menu__list-dropdown">
+                            <ul class="catalog-menu__list-dropdown-list">
+                                <li class="catalog-menu__list-dropdown-item">
+                                    <a href="payment.html" class="catalog-menu__list-dropdown-link">Оплата</a>
+                                </li>
+                                <li class="catalog-menu__list-dropdown-item">
+                                    <a href="delivery.html" class="catalog-menu__list-dropdown-link">Доставка</a>
+                                </li>
+                                <li class="catalog-menu__list-dropdown-item">
+                                    <a href="exchange.html" class="catalog-menu__list-dropdown-link">Возврат и обмен</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="catalog-menu__list-item">
+                        <a href="about.html" class="catalog-menu__list-link">о бренде</a>
+                    </li>
+                    <li class="catalog-menu__list-item">
+                        <a href="vacancies.html" class="catalog-menu__list-link">вакансии</a>
+                    </li>
+                    <li class="catalog-menu__list-item">
+                        <a href="contacts.html" class="catalog-menu__list-link">контакты</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- cart -->
+    <div class="basket">
+        <div class="basket__wrapper">
+            <div class="basket__wrapper-main">
+                <button class="basket__wrapper-close">
+                    <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.707092 0.707031L14.2071 14.207M27.7071 27.707L14.2071 14.207M14.2071 14.207L27.7071 0.707031L0.707092 27.707" stroke-width="2" />
+                    </svg>
+                </button>
+                <div class="basket__wrapper-top">
+                    <p class="basket__wrapper-title">Корзина</p>
+                    <button class="basket__wrapper-clear">Очистить</button>
+                </div>
+                <div class="basket__wrapper-content">
+                    <div class="basket__wrapper-content-total">
+                        <p class="basket__wrapper-content-total-text">Итого</p>
+                        <p class="basket__wrapper-content-total-price">10 000 <span>₽</span></p>
+                    </div>
+                    <!-- <div class="basket__wrapper-content-empty">
+                        <p class="basket__wrapper-content-empty-text">Тут пусто</p>
+                        <p class="basket__wrapper-content-empty-text-desc">Сделайте свой первый заказ!</p>
+                    </div> -->
+                    <div class="basket__wrapper-content-list">
+                        <ul class="basket-list">
+                            <li class="basket-list__item">
+                                <div class="basket-item">
+                                    <div class="basket-item__wrapper">
+                                        <div class="basket-item__img">
+                                            <img src="../assets/img/other/card-1.png" alt="product" class="basket-item__img-img">
+                                        </div>
+                                        <div class="basket-item__info">
+                                            <div class="basket-item__info-top">
+                                                <p class="basket-item__info-title">Лонгслив с кружевом, черный</p>
+                                                <div class="basket-item__info-price-wrapper">
+                                                    <p class="basket-item__info-price-main">1 999 ₽</p>
+                                                    <p class="basket-item__info-price-old">2 999 ₽</p>
+                                                </div>
+                                            </div>
+                                            <div class="basket-item__info-content">
+                                                <ul class="basket-item__info-props">
+                                                    <li class="basket-item__info-prop">
+                                                        <p class="basket-item__info-prop-value">Цвет: <span>сливочное масло</span></p>
+                                                    </li>
+                                                    <li class="basket-item__info-prop">
+                                                        <p class="basket-item__info-prop-value">Размер: <span>xs</span></p>
+                                                    </li>
+                                                </ul>
+                                                <div class="basket-item__info-counter">
+                                                    <button class="basket-item__info-counter-btn" >-</button>
+                                                    <input type="number" class="basket-item__info-counter-input" value="1">
+                                                    <button class="basket-item__info-counter-btn">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="basket-item__delete-btn">
+                                            <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.27283 1.27271L13.2728 13.2727M25.2728 25.2727L13.2728 13.2727M13.2728 13.2727L25.2728 1.27271L1.27283 25.2727" stroke="#280000" stroke-opacity="0.4" stroke-width="3.6" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="basket-list__item">
+                                <div class="basket-item">
+                                    <div class="basket-item__wrapper">
+                                        <div class="basket-item__img">
+                                            <img src="../assets/img/other/card-1.png" alt="product" class="basket-item__img-img">
+                                        </div>
+                                        <div class="basket-item__info">
+                                            <div class="basket-item__info-top">
+                                                <p class="basket-item__info-title">Лонгслив с кружевом, черный</p>
+                                                <div class="basket-item__info-price-wrapper">
+                                                    <p class="basket-item__info-price-main">1 999 ₽</p>
+                                                    <p class="basket-item__info-price-old">2 999 ₽</p>
+                                                </div>
+                                            </div>
+                                            <div class="basket-item__info-content">
+                                                <ul class="basket-item__info-props">
+                                                    <li class="basket-item__info-prop">
+                                                        <p class="basket-item__info-prop-value">Цвет: <span>сливочное масло</span></p>
+                                                    </li>
+                                                    <li class="basket-item__info-prop">
+                                                        <p class="basket-item__info-prop-value">Размер: <span>xs</span></p>
+                                                    </li>
+                                                </ul>
+                                                <div class="basket-item__info-counter">
+                                                    <button class="basket-item__info-counter-btn" >-</button>
+                                                    <input type="number" class="basket-item__info-counter-input" value="1">
+                                                    <button class="basket-item__info-counter-btn">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="basket-item__delete-btn">
+                                            <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.27283 1.27271L13.2728 13.2727M25.2728 25.2727L13.2728 13.2727M13.2728 13.2727L25.2728 1.27271L1.27283 25.2727" stroke="#280000" stroke-opacity="0.4" stroke-width="3.6" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="basket-list__item">
+                                <div class="basket-item">
+                                    <div class="basket-item__wrapper">
+                                        <div class="basket-item__img">
+                                            <img src="../assets/img/other/card-1.png" alt="product" class="basket-item__img-img">
+                                        </div>
+                                        <div class="basket-item__info">
+                                            <div class="basket-item__info-top">
+                                                <p class="basket-item__info-title">Лонгслив с кружевом, черный</p>
+                                                <div class="basket-item__info-price-wrapper">
+                                                    <p class="basket-item__info-price-main">1 999 ₽</p>
+                                                    <p class="basket-item__info-price-old">2 999 ₽</p>
+                                                </div>
+                                            </div>
+                                            <div class="basket-item__info-content">
+                                                <ul class="basket-item__info-props">
+                                                    <li class="basket-item__info-prop">
+                                                        <p class="basket-item__info-prop-value">Цвет: <span>сливочное масло</span></p>
+                                                    </li>
+                                                    <li class="basket-item__info-prop">
+                                                        <p class="basket-item__info-prop-value">Размер: <span>xs</span></p>
+                                                    </li>
+                                                </ul>
+                                                <div class="basket-item__info-counter">
+                                                    <button class="basket-item__info-counter-btn" >-</button>
+                                                    <input type="number" class="basket-item__info-counter-input" value="1">
+                                                    <button class="basket-item__info-counter-btn">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="basket-item__delete-btn">
+                                            <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.27283 1.27271L13.2728 13.2727M25.2728 25.2727L13.2728 13.2727M13.2728 13.2727L25.2728 1.27271L1.27283 25.2727" stroke="#280000" stroke-opacity="0.4" stroke-width="3.6" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                            <li class="basket-list__item">
+                                <div class="basket-item">
+                                    <div class="basket-item__wrapper">
+                                        <div class="basket-item__img">
+                                            <img src="../assets/img/other/card-1.png" alt="product" class="basket-item__img-img">
+                                        </div>
+                                        <div class="basket-item__info">
+                                            <div class="basket-item__info-top">
+                                                <p class="basket-item__info-title">Лонгслив с кружевом, черный</p>
+                                                <div class="basket-item__info-price-wrapper">
+                                                    <p class="basket-item__info-price-main">1 999 ₽</p>
+                                                    <p class="basket-item__info-price-old">2 999 ₽</p>
+                                                </div>
+                                            </div>
+                                            <div class="basket-item__info-content">
+                                                <ul class="basket-item__info-props">
+                                                    <li class="basket-item__info-prop">
+                                                        <p class="basket-item__info-prop-value">Цвет: <span>сливочное масло</span></p>
+                                                    </li>
+                                                    <li class="basket-item__info-prop">
+                                                        <p class="basket-item__info-prop-value">Размер: <span>xs</span></p>
+                                                    </li>
+                                                </ul>
+                                                <div class="basket-item__info-counter">
+                                                    <button class="basket-item__info-counter-btn" >-</button>
+                                                    <input type="number" class="basket-item__info-counter-input" value="1">
+                                                    <button class="basket-item__info-counter-btn">+</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <button class="basket-item__delete-btn">
+                                            <svg width="27" height="27" viewBox="0 0 27 27" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M1.27283 1.27271L13.2728 13.2727M25.2728 25.2727L13.2728 13.2727M13.2728 13.2727L25.2728 1.27271L1.27283 25.2727" stroke="#280000" stroke-opacity="0.4" stroke-width="3.6" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="basket__wrapper-content-bottom">
+                        <!-- <a href="catalog.html" class="basket__wrapper-content-btn-catalog">Каталог</a> -->
+                        <button class="basket__wrapper-content-btn-order">Оформить заказ</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- auth modal -->
+    <div class="auth-modal">
+        <div class="auth-modal__wrapper">
+            <div class="auth-modal__wrapper-main">
+                <button class="auth-modal__wrapper-close">
+                    <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.707092 0.707031L14.2071 14.207M27.7071 27.707L14.2071 14.207M14.2071 14.207L27.7071 0.707031L0.707092 27.707" stroke-width="2" />
+                    </svg>
+                </button>
+                <div class="auth-modal__wrapper-form">
+                    <div class="auth-modal__wrapper-form-header">
+                        <h3 class="auth-modal__wrapper-form-title">ЛИЧНЫЙ КАБИНЕТ</h3>
+                        <p class="auth-modal__wrapper-form-text">Войти или зарегистрироваться</p>
+                    </div>
+                    <form action="" class="auth-form">
+                        <div class="auth-form__wrapper">
+                            <label class="auth-form__label">
+                                <span class="auth-form__label-title">Имя</span>
+                                <input type="text" class="input auth-form__input" placeholder="Анна">
+                            </label>
+                            <label class="auth-form__label">
+                                <span class="auth-form__label-title">Фамилия</span>
+                                <input type="text" class="input auth-form__input" placeholder="Антонова">
+                            </label>
+                            <label class="auth-form__label">
+                                <span class="auth-form__label-title">Дата рождения</span>
+                                <input type="text" class="input auth-form__input" placeholder="__.__.____">
+                            </label>
+                            <label class="auth-form__label">
+                                <span class="auth-form__label-title">Телефон</span>
+                                <input type="text" class="input auth-form__input" placeholder="+7 999 999 99 99">
+                            </label>
+                            <label class="auth-form__label">
+                                <span class="auth-form__label-title">Почта</span>
+                                <input type="email" class="input auth-form__input" placeholder="@mail.ru">
+                            </label>
+                        </div>
+                        <div class="auth-form__bottom">
+                            <label class="checkbox">
+                                <input type="checkbox" checked>
+                                <span>Я согласен на <a href="">обработку персональных данных</a>. </span>
+                            </label>
+                            <button class="btn btn-pink auth-form__bottom-btn">Зарегистрироваться</button>
+                            <p class="auth-form__bottom-text">Получить новый код можно через 00:55 </p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- search -->
+    <div class="search-modal">
+        <div class="search-modal__wrapper">
+            <div class="search-modal__wrapper-main">
+                <button class="auth-modal__wrapper-close">
+                    <svg width="29" height="29" viewBox="0 0 29 29" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.707092 0.707031L14.2071 14.207M27.7071 27.707L14.2071 14.207M14.2071 14.207L27.7071 0.707031L0.707092 27.707" stroke-width="2" />
+                    </svg>
+                </button>
+                <div class="search-modal__wrapper-content">
+                    <p class="search-modal__wrapper-content-title">Поиск</p>
+                    <div class="search-modal__wrapper-form">
+                        <form action="" class="search-form">
+                            <input type="text" class="search-form__input" placeholder="Поиск..">
+                            <button class="search-form__btn">
+                                <svg width="26" height="28" viewBox="0 0 26 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M10.833 1C16.2521 1 20.667 5.45142 20.667 10.9688C20.667 16.4861 16.2521 20.9375 10.833 20.9375C5.41403 20.9373 1 16.486 1 10.9688C1 5.45152 5.41403 1.00017 10.833 1Z" stroke="#280000" stroke-opacity="0.7" stroke-width="2" />
+                                    <path d="M16.6665 18.5625L24.9998 27" stroke="#280000" stroke-opacity="0.7" stroke-width="2" />
+                                </svg>
+                            </button>
+                        </form>
+                        <div class="search-modal__wrapper-request">
+                            <p class="search-modal__wrapper-request-title">Популярные запросы</p>
+                            <ul class="search-modal__wrapper-request-list">
+                                <li class="search-modal__wrapper-request-item">
+                                    <a href="" class="search-modal__wrapper-request-link">Лонгслив</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="search-modal__wrapper-history">
+                        <div class="search-modal__wrapper-history-top">
+                            <p class="search-modal__wrapper-history-title">Вы смотрели</p>
+                            <div class="search-modal__wrapper-history-btns">
+                                <div class="history-swiper-btn history-swiper-btn-prev">
+                                    <svg width="34" height="23" viewBox="0 0 34 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M0.439339 12.1066C-0.146446 11.5208 -0.146446 10.571 0.439339 9.98524L9.98528 0.439295C10.5711 -0.146492 11.5208 -0.146492 12.1066 0.439295C12.6924 1.02508 12.6924 1.97483 12.1066 2.56062L3.62132 11.0459L12.1066 19.5312C12.6924 20.117 12.6924 21.0667 12.1066 21.6525C11.5208 22.2383 10.5711 22.2383 9.98528 21.6525L0.439339 12.1066ZM33.5 11.0459L33.5 12.5459L1.5 12.5459L1.5 11.0459L1.5 9.5459L33.5 9.5459L33.5 11.0459Z" fill="#FF0090" />
+                                    </svg>
+                                </div>
+                                <div class="history-swiper-btn history-swiper-btn-next">
+                                    <svg width="34" height="23" viewBox="0 0 34 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M33.0607 12.1066C33.6464 11.5208 33.6464 10.571 33.0607 9.98524L23.5147 0.439295C22.9289 -0.146492 21.9792 -0.146492 21.3934 0.439295C20.8076 1.02508 20.8076 1.97483 21.3934 2.56062L29.8787 11.0459L21.3934 19.5312C20.8076 20.117 20.8076 21.0667 21.3934 21.6525C21.9792 22.2383 22.9289 22.2383 23.5147 21.6525L33.0607 12.1066ZM0 11.0459L1.31134e-07 12.5459L32 12.5459L32 11.0459L32 9.5459L-1.31134e-07 9.5459L0 11.0459Z" fill="#FF0090" />
+                                    </svg>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="search-modal__wrapper-history-swiper">
+                            <div class="swiper history-swiper">
+                                <div class="swiper-wrapper history-swiper__wrapper">
+                                    <div class="swiper-slide history-swiper__slide">
+                                        <div class="catalog-card catalog-card--small">
+                                            <div class="catalog-card__wrapper">
+                                                <div class="catalog-card__top">
+                                                    <a href="" class="catalog-card__link">
+                                                        <img src="../assets/img/other/card-1.png" alt="catalog card" class="catalog-card__img">
+                                                    </a>
+                                                    <button class="catalog-card__favorite-btn">
+                                                        <svg width="43" height="37" viewBox="0 0 43 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M30.9824 0.0498047C37.1854 0.0500454 42.1494 4.91983 42.1494 11.0088C42.1494 14.6588 41.0635 17.6096 37.9844 21.2383C35.2925 24.4106 31.075 28.1038 24.7256 33.2402L21.8721 35.5322L21.1309 36.1387L21.0996 36.1641L21.0684 36.1387L20.3271 35.5322C12.3604 29.1693 7.2913 24.8638 4.21484 21.2383C1.13571 17.6096 0.0498225 14.6588 0.0498047 11.0088C0.0498047 4.91983 5.01382 0.0500451 11.2168 0.0498047C16.2721 0.0498047 19.1224 2.81695 21.0996 4.99512C23.0768 2.81695 25.9271 0.0498047 30.9824 0.0498047ZM30.9824 2.57422C26.683 2.57422 24.3488 5.1027 22.4961 7.16309L22.4951 7.16211L21.1377 8.73828L21.0996 8.78223L21.0615 8.73828L19.7031 7.16211V7.16309C17.8504 5.1027 15.5162 2.57422 11.2168 2.57422C6.42608 2.57446 2.62012 6.31017 2.62012 11.0088C2.62014 14.085 3.602 16.6498 6.40625 19.9004C9.20896 23.1492 13.8288 27.0788 21.0996 32.8838C28.3704 27.0788 32.9903 23.1492 35.793 19.9004C38.5972 16.6498 39.5791 14.085 39.5791 11.0088C39.5791 6.31017 35.7731 2.57446 30.9824 2.57422Z" fill="white" stroke="white" stroke-width="0.1" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <div class="catalog-card__content">
+                                                    <a href="" class="catalog-card__title">Лонгслив с кружевом, черный</a>
+                                                    <div class="catalog-card__price-wrapper">
+                                                        <p class="catalog-card__price">2 000 ₽</p>
+                                                        <p class="catalog-card__price-old">2 000 ₽</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide history-swiper__slide">
+                                        <div class="catalog-card catalog-card--small">
+                                            <div class="catalog-card__wrapper">
+                                                <div class="catalog-card__top">
+                                                    <a href="" class="catalog-card__link">
+                                                        <img src="../assets/img/other/card-1.png" alt="catalog card" class="catalog-card__img">
+                                                    </a>
+                                                    <button class="catalog-card__favorite-btn">
+                                                        <svg width="43" height="37" viewBox="0 0 43 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M30.9824 0.0498047C37.1854 0.0500454 42.1494 4.91983 42.1494 11.0088C42.1494 14.6588 41.0635 17.6096 37.9844 21.2383C35.2925 24.4106 31.075 28.1038 24.7256 33.2402L21.8721 35.5322L21.1309 36.1387L21.0996 36.1641L21.0684 36.1387L20.3271 35.5322C12.3604 29.1693 7.2913 24.8638 4.21484 21.2383C1.13571 17.6096 0.0498225 14.6588 0.0498047 11.0088C0.0498047 4.91983 5.01382 0.0500451 11.2168 0.0498047C16.2721 0.0498047 19.1224 2.81695 21.0996 4.99512C23.0768 2.81695 25.9271 0.0498047 30.9824 0.0498047ZM30.9824 2.57422C26.683 2.57422 24.3488 5.1027 22.4961 7.16309L22.4951 7.16211L21.1377 8.73828L21.0996 8.78223L21.0615 8.73828L19.7031 7.16211V7.16309C17.8504 5.1027 15.5162 2.57422 11.2168 2.57422C6.42608 2.57446 2.62012 6.31017 2.62012 11.0088C2.62014 14.085 3.602 16.6498 6.40625 19.9004C9.20896 23.1492 13.8288 27.0788 21.0996 32.8838C28.3704 27.0788 32.9903 23.1492 35.793 19.9004C38.5972 16.6498 39.5791 14.085 39.5791 11.0088C39.5791 6.31017 35.7731 2.57446 30.9824 2.57422Z" fill="white" stroke="white" stroke-width="0.1" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <div class="catalog-card__content">
+                                                    <a href="" class="catalog-card__title">Лонгслив с кружевом, черный</a>
+                                                    <div class="catalog-card__price-wrapper">
+                                                        <p class="catalog-card__price">2 000 ₽</p>
+                                                        <p class="catalog-card__price-old">2 000 ₽</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="swiper-slide history-swiper__slide">
+                                        <div class="catalog-card catalog-card--small">
+                                            <div class="catalog-card__wrapper">
+                                                <div class="catalog-card__top">
+                                                    <a href="" class="catalog-card__link">
+                                                        <img src="../assets/img/other/card-1.png" alt="catalog card" class="catalog-card__img">
+                                                    </a>
+                                                    <button class="catalog-card__favorite-btn">
+                                                        <svg width="43" height="37" viewBox="0 0 43 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M30.9824 0.0498047C37.1854 0.0500454 42.1494 4.91983 42.1494 11.0088C42.1494 14.6588 41.0635 17.6096 37.9844 21.2383C35.2925 24.4106 31.075 28.1038 24.7256 33.2402L21.8721 35.5322L21.1309 36.1387L21.0996 36.1641L21.0684 36.1387L20.3271 35.5322C12.3604 29.1693 7.2913 24.8638 4.21484 21.2383C1.13571 17.6096 0.0498225 14.6588 0.0498047 11.0088C0.0498047 4.91983 5.01382 0.0500451 11.2168 0.0498047C16.2721 0.0498047 19.1224 2.81695 21.0996 4.99512C23.0768 2.81695 25.9271 0.0498047 30.9824 0.0498047ZM30.9824 2.57422C26.683 2.57422 24.3488 5.1027 22.4961 7.16309L22.4951 7.16211L21.1377 8.73828L21.0996 8.78223L21.0615 8.73828L19.7031 7.16211V7.16309C17.8504 5.1027 15.5162 2.57422 11.2168 2.57422C6.42608 2.57446 2.62012 6.31017 2.62012 11.0088C2.62014 14.085 3.602 16.6498 6.40625 19.9004C9.20896 23.1492 13.8288 27.0788 21.0996 32.8838C28.3704 27.0788 32.9903 23.1492 35.793 19.9004C38.5972 16.6498 39.5791 14.085 39.5791 11.0088C39.5791 6.31017 35.7731 2.57446 30.9824 2.57422Z" fill="white" stroke="white" stroke-width="0.1" />
+                                                        </svg>
+                                                    </button>
+                                                </div>
+                                                <div class="catalog-card__content">
+                                                    <a href="" class="catalog-card__title">Лонгслив с кружевом, черный</a>
+                                                    <div class="catalog-card__price-wrapper">
+                                                        <p class="catalog-card__price">2 000 ₽</p>
+                                                        <p class="catalog-card__price-old">2 000 ₽</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- overlay -->
+    <div class="overlay" data-overlay></div>
+ 
+    <main>
+        <!-- Каталог детальный -->
+        <section class="section-catalog-detail">
+            <div class="container">
+                <div class="catalog-detail">
+                    <div class="catalog-detail__wrapper">
+                        <div class="catalog-detail__slider">
+                            <div thumbsSlider="" class="swiper product-small-swiper">
+                                <div class="swiper-wrapper product-small-swiper__wrapper">
+                                    <div class="swiper-slide product-small-swiper__item">
+                                        <img src="../assets/img/other/preview-card.png" class="product-small-swiper__img" />
+                                    </div>
+                                    <div class="swiper-slide product-small-swiper__item">
+                                        <img src="../assets/img/other/preview-card.png" class="product-small-swiper__img" />
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="swiper product-preview-swiper">
+                                <div class="swiper-wrapper product-preview-swiper__wrapper">
+                                    <a href="../assets/img/other/preview-card.png" data-fancybox="gallery" class="swiper-slide product-preview-swiper__item">
+                                        <img src="../assets/img/other/preview-card.png" class="product-preview-swiper__img" />
+                                    </a>
+                                    <div href="../assets/img/other/preview-card.png" data-fancybox="gallery" class="swiper-slide product-preview-swiper__item">
+                                        <img src="../assets/img/other/preview-card.png" class="product-preview-swiper__img" />
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="catalog-detail__content">
+                            <div class="catalog-detail__content-header">
+                                <ul class="breadcrumb">
+                                    <li class="breadcrumb__item">
+                                        <a href="../index.html" class="breadcrumb__item-link">Главная</a>
+                                    </li>
+                                    <li class="breadcrumb__item">
+                                        <a href="../index.html" class="breadcrumb__item-link">Каталог</a>
+                                    </li>
+                                    <li class="breadcrumb__item">
+                                        <span class="breadcrumb__item-link breadcrumb__item-link--active">Лонгслив с открытым плечом</span>
+                                    </li>
+                                </ul>
+                                <a href="" class="catalog-detail__content-header-back">Вернуться</a>
+                            </div>
+                            <div class="catalog-detail__content-top">
+                                <h1 class="catalog-detail__title">Лонгслив с открытым плечом</h1>
+                                <div class="catalog-detail__content-top-price">
+                                    <p class="catalog-detail__price">2 000 ₽</p>
+                                    <p class="catalog-detail__price-old">2 000 ₽</p>
+                                </div>
+                            </div>
+                            <div class="catalog-detail__content-props">
+                                <div class="offer-props">
+                                    <div class="offer-props__top">
+                                        <span class="offer-props__top-label">размер</span>
+                                        <div class="size-dropdown">
+                                            <button class="size-dropdown__btn" data-size-dropdown-btn>Подобрать размер</button>
+                                            <div class="size-dropdown__wrapper">
+                                                <div class="size-dropdown__item">
+                                                    <p class="size-dropdown__item-title">Таблица размеров</p>
+                                                    <ul class="size-table">
+                                                        <li class="size-table__row size-table__row--title">
+                                                            <p class="size-table__row-item"></p>
+                                                            <p class="size-table__row-item">40/42</p>
+                                                            <p class="size-table__row-item">44/46</p>
+                                                            <p class="size-table__row-item">48/50</p>
+                                                            <p class="size-table__row-item">52/54</p>
+                                                            <p class="size-table__row-item">56/58</p>
+                                                        </li>
+                                                        <li class="size-table__row">
+                                                            <p class="size-table__row-item">обхват груди</p>
+                                                            <p class="size-table__row-item">78-86</p>
+                                                            <p class="size-table__row-item">86-94</p>
+                                                            <p class="size-table__row-item">94-102</p>
+                                                            <p class="size-table__row-item">102-110</p>
+                                                            <p class="size-table__row-item">110-118</p>
+                                                        </li>
+                                                        <li class="size-table__row">
+                                                            <p class="size-table__row-item">обхват талии</p>
+                                                            <p class="size-table__row-item">58-66</p>
+                                                            <p class="size-table__row-item">66-74</p>
+                                                            <p class="size-table__row-item">74-82</p>
+                                                            <p class="size-table__row-item">82-90</p>
+                                                            <p class="size-table__row-item">90-98</p>
+                                                        </li>
+                                                        <li class="size-table__row">
+                                                            <p class="size-table__row-item">обхват бедер</p>
+                                                            <p class="size-table__row-item">84-94</p>
+                                                            <p class="size-table__row-item">94-102</p>
+                                                            <p class="size-table__row-item">102-108</p>
+                                                            <p class="size-table__row-item">108-116</p>
+                                                            <p class="size-table__row-item">116-124</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="size-dropdown__item">
+                                                    <p class="size-dropdown__item-title">параметры модели</p>
+                                                    <ul class="size-table">
+                                                        <li class="size-table__row">
+                                                            <p class="size-table__row-item">Рост</p>
+                                                            <p class="size-table__row-item">170 см</p>
+                                                        </li>
+                                                        <li class="size-table__row">
+                                                            <p class="size-table__row-item">обхват груди</p>
+                                                            <p class="size-table__row-item">85 см</p>
+                                                        </li>
+                                                        <li class="size-table__row">
+                                                            <p class="size-table__row-item">обхват талии</p>
+                                                            <p class="size-table__row-item">67 см</p>
+                                                        </li>
+                                                        <li class="size-table__row">
+                                                            <p class="size-table__row-item">обхват бедер</p>
+                                                            <p class="size-table__row-item">90 см</p>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="offer-props__wrapper">
+                                        <ul class="offer-props__list">
+                                            <li class="offer-props__item active">
+                                                <span class="offer-props__item-value">xs-s</span>
+                                            </li>
+                                            <li class="offer-props__item disabled">
+                                                <span class="offer-props__item-value">s-m</span>
+                                            </li>
+                                            <li class="offer-props__item">
+                                                <span class="offer-props__item-value">m-l</span>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                                <div class="offer-props">
+                                    <div class="offer-props__top">
+                                        <span class="offer-props__top-label">цвет</span>
+                                    </div>
+                                    <div class="offer-props__wrapper">
+                                        <ul class="offer-colors__list">
+                                            <li class="offer-colors__item active yellow"></li>
+                                            <li class="offer-colors__item gray"></li>
+                                            <li class="offer-colors__item red"></li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="catalog-detail__content-btns">
+                                <button class="btn-cart">Добавить в корзину</button>
+                                <button class="btn-favorites">
+                                    <svg width="43" height="37" viewBox="0 0 43 37" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M30.9824 0.050293C37.1854 0.0505337 42.1494 4.92032 42.1494 11.0093C42.1494 14.6593 41.0635 17.6101 37.9844 21.2388C35.2925 24.4111 31.075 28.1042 24.7256 33.2407L21.8721 35.5327L21.1309 36.1392L21.0996 36.1646L21.0684 36.1392L20.3271 35.5327C12.3604 29.1698 7.2913 24.8643 4.21484 21.2388C1.13571 17.6101 0.0498225 14.6593 0.0498047 11.0093C0.0498047 4.92032 5.01382 0.0505334 11.2168 0.050293C16.2721 0.050293 19.1224 2.81744 21.0996 4.99561C23.0768 2.81744 25.9271 0.050293 30.9824 0.050293ZM30.9824 2.57471C26.683 2.57471 24.3488 5.10318 22.4961 7.16357L22.4951 7.1626L21.1377 8.73877L21.0996 8.78271L21.0615 8.73877L19.7031 7.1626V7.16357C17.8504 5.10318 15.5162 2.57471 11.2168 2.57471C6.42608 2.57495 2.62012 6.31066 2.62012 11.0093C2.62014 14.0855 3.602 16.6503 6.40625 19.9009C9.20896 23.1497 13.8288 27.0793 21.0996 32.8843C28.3704 27.0793 32.9903 23.1497 35.793 19.9009C38.5972 16.6503 39.5791 14.0855 39.5791 11.0093C39.5791 6.31066 35.7731 2.57495 30.9824 2.57471Z" fill="#280000" stroke="#280000" stroke-width="0.1" />
+                                    </svg>
+                                </button>
+                            </div>
+                            <div class="catalog-detail__content-tabs">
+                                <ul class="detail-tabs">
+                                    <li class="detail-tabs__item">
+                                        <div class="detail-tabs__top">
+                                            <p class="detail-tabs__title">Описание</p>
+                                            <button class="detail-tabs__btn">
+                                                <svg width="35" height="22" viewBox="0 0 35 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M16.9393 17.0607C17.5251 17.6464 18.4749 17.6464 19.0607 17.0607L28.6066 7.51472C29.1924 6.92893 29.1924 5.97918 28.6066 5.3934C28.0208 4.80761 27.0711 4.80761 26.4853 5.3934L18 13.8787L9.51472 5.3934C8.92893 4.80761 7.97918 4.80761 7.3934 5.3934C6.80761 5.97919 6.80761 6.92893 7.3934 7.51472L16.9393 17.0607ZM18 15L16.5 15L16.5 16L18 16L19.5 16L19.5 15L18 15Z" fill="#280000" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="detail-tabs__bottom">
+                                            <p class="detail-tabs__text">123</p>
+                                        </div>
+                                    </li>
+                                    <li class="detail-tabs__item">
+                                        <div class="detail-tabs__top">
+                                            <p class="detail-tabs__title">Уход</p>
+                                            <button class="detail-tabs__btn">
+                                                <svg width="35" height="22" viewBox="0 0 35 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                    <path d="M16.9393 17.0607C17.5251 17.6464 18.4749 17.6464 19.0607 17.0607L28.6066 7.51472C29.1924 6.92893 29.1924 5.97918 28.6066 5.3934C28.0208 4.80761 27.0711 4.80761 26.4853 5.3934L18 13.8787L9.51472 5.3934C8.92893 4.80761 7.97918 4.80761 7.3934 5.3934C6.80761 5.97919 6.80761 6.92893 7.3934 7.51472L16.9393 17.0607ZM18 15L16.5 15L16.5 16L18 16L19.5 16L19.5 15L18 15Z" fill="#280000" />
+                                                </svg>
+                                            </button>
+                                        </div>
+                                        <div class="detail-tabs__bottom">
+                                            <p class="detail-tabs__text">
+                                                Правила ухода:
+                                                <br><br>
+                                                - если вы стираете в машинке, убедитесь, что включили деликатную стирку;
+                                                <br>
+                                                - при стирке руками температура воды не должна превышать 30°C;
+                                                <br>
+                                                - отжимать натуральные ткани необходимо вручную, не перекручивая материал. Просто стряхните воду и дайте остаткам жидкости стечь с расположенного горизонтально изделия.
+                                                <br><br>
+                                                <span>*</span>Однако лучшим вариантом ухода за натуральными тканями остается химчистка. Обратитесь туда, если есть такая возможность.
+                                            </p>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Разделы -->
+        <section class="section-medium">
+            <div class="container">
+                <div class="container__top">
+                    <h2>вам понравится</h2>
+                </div>
+                <div class="container__inner">
+                    <div class="similar-products">
+                        <div class="swiper similar-swiper">
+                            <div class="similar-swiper__btn similar-swiper__btn--prev">
+                                <svg width="34" height="23" viewBox="0 0 34 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M0.439339 12.1066C-0.146446 11.5208 -0.146446 10.571 0.439339 9.98524L9.98528 0.439295C10.5711 -0.146492 11.5208 -0.146492 12.1066 0.439295C12.6924 1.02508 12.6924 1.97483 12.1066 2.56062L3.62132 11.0459L12.1066 19.5312C12.6924 20.117 12.6924 21.0667 12.1066 21.6525C11.5208 22.2383 10.5711 22.2383 9.98528 21.6525L0.439339 12.1066ZM33.5 11.0459L33.5 12.5459L1.5 12.5459L1.5 11.0459L1.5 9.5459L33.5 9.5459L33.5 11.0459Z" fill="#FF0090" />
+                                </svg>
+                            </div>
+                            <div class="swiper-wrapper similar-swiper__wrapper">
+                                <div class="swiper-slide similar-swiper__slide">
+                                    <div class="catalog-card">
+                                        <div class="catalog-card__wrapper">
+                                            <div class="catalog-card__top">
+                                                <a href="" class="catalog-card__link">
+                                                    <img src="../assets/img/other/card-1.png" alt="catalog card" class="catalog-card__img">
+                                                </a>
+                                                <button class="catalog-card__favorite-btn">
+                                                    <svg width="42" height="36" viewBox="0 0 42 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M30.7852 1C36.2278 1.0002 40.6568 5.07523 40.9805 10.084L40.999 10.5723C41.0258 13.0509 40.6187 14.9559 39.7246 16.792C38.8171 18.6556 37.3837 20.4997 35.2646 22.8262L35.2637 22.8271C31.2721 27.218 25.6137 31.9624 21.3818 34.5869L21 34.8232L20.6172 34.5869C16.386 31.9626 10.7352 27.2157 6.74316 22.8271C4.62585 20.5003 3.19181 18.6557 2.28223 16.792C1.44199 15.0703 1.02966 13.2885 1.00195 11.0312L1.00098 10.5742C1.05836 5.34202 5.59766 1 11.2158 1C15.6797 1.00017 18.6593 3.40723 20.2549 5.1875L21 6.01758L21.7451 5.1875C23.3407 3.40717 26.321 1 30.7852 1Z" stroke-width="2" />
+                                                    </svg>
+                                                </button>
+                                            </div>
+                                            <div class="catalog-card__content">
+                                                <a href="" class="catalog-card__title">Лонгслив с кружевом, черный</a>
+                                                <div class="catalog-card__price-wrapper">
+                                                    <p class="catalog-card__price">2 000 ₽</p>
+                                                    <p class="catalog-card__price-old">2 000 ₽</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="similar-swiper__btn similar-swiper__btn--next">
+                                <svg width="34" height="23" viewBox="0 0 34 23" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M33.0607 12.1066C33.6464 11.5208 33.6464 10.571 33.0607 9.98524L23.5147 0.439295C22.9289 -0.146492 21.9792 -0.146492 21.3934 0.439295C20.8076 1.02508 20.8076 1.97483 21.3934 2.56062L29.8787 11.0459L21.3934 19.5312C20.8076 20.117 20.8076 21.0667 21.3934 21.6525C21.9792 22.2383 22.9289 22.2383 23.5147 21.6525L33.0607 12.1066ZM0 11.0459L1.31134e-07 12.5459L32 12.5459L32 11.0459L32 9.5459L-1.31134e-07 9.5459L0 11.0459Z" fill="#FF0090" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__wrapper">
+                <div class="footer__row">
+                    <div class="footer__col">
+                        <p class="footer__col-title">Навигация</p>
+                        <div class="footer__col-content">
+                            <ul class="footer__col-list">
+                                <li class="footer__col-item">
+                                    <a href="catalog.html" class="footer__col-link">
+                                        <span>Каталог</span>
+                                    </a>
+                                </li>
+                                <li class="footer__col-item">
+                                    <a href="about.html" class="footer__col-link">
+                                        <span>О бренде</span>
+                                    </a>
+                                </li>
+                                <li class="footer__col-item">
+                                    <a href="vacancies.html" class="footer__col-link">
+                                        <span>Вакансии</span>
+                                    </a>
+                                </li>
+                                <li class="footer__col-item">
+                                    <a href="contacts.html" class="footer__col-link">
+                                        <span>Контакты</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__col">
+                        <p class="footer__col-title">Помощь</p>
+                        <div class="footer__col-content">
+                            <ul class="footer__col-list">
+                                <li class="footer__col-item">
+                                    <a href="" class="footer__col-link">
+                                        <span>Проверка статуса заказа</span>
+                                    </a>
+                                </li>
+                                <li class="footer__col-item">
+                                    <a href="payment.html" class="footer__col-link">
+                                        <span>Оплата</span>
+                                    </a>
+                                </li>
+                                <li class="footer__col-item">
+                                    <a href="delivery.html" class="footer__col-link">
+                                        <span>Доставка</span>
+                                    </a>
+                                </li>
+                                <li class="footer__col-item">
+                                    <a href="exchange.html" class="footer__col-link">
+                                        <span>Возврат и обмен</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__col">
+                        <p class="footer__col-title">Служба поддержки</p>
+                        <div class="footer__col-content">
+                            <ul class="footer__col-list">
+                                <li class="footer__col-item">
+                                    <a href="" class="footer__col-link">
+                                        <span>+7 999 9999 99 99</span>
+                                    </a>
+                                </li>
+                                <li class="footer__col-item">
+                                    <a href="" class="footer__col-link">
+                                        <span>yarkayaptitsa@mail.ru</span>
+                                    </a>
+                                </li>
+                                <li class="footer__col-item">
+                                    <p class="footer__col-text">c 8:00 до 22:00 по МСК</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="footer__col">
+                        <p class="footer__col-title">Соглашения</p>
+                        <div class="footer__col-content">
+                            <ul class="footer__col-list">
+                                <li class="footer__col-item">
+                                    <a href="" class="footer__col-link">
+                                        <span>Соглашение 
+                                            <br> о конфиденциальности</span>
+                                    </a>
+                                </li>
+                                <li class="footer__col-item">
+                                    <a href="" class="footer__col-link">
+                                        <span>Уведомление об использовании
+                                            <br> cookie файлов</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer__bottom">
+                    <a href="#" class="footer__bottom-logo">
+                        <img src="../assets/img/icons/f-logo.svg" alt="footer logo" class="footer__logo">
+                    </a>
+                    <div class="footer__bottom-wrapper">
+                        <a href="" class="footer__bottom-link">
+                            <img src="../assets/img/icons/i-mb.svg" alt="mb" class="footer__bottom-icon">
+                        </a>
+                        <a href="" class="footer__bottom-link">
+                            <img src="../assets/img/icons/i-hitech.svg" alt="hitech" class="footer__bottom-icon">
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/libs/jquery.min.js"></script>
+    <script src="../assets/libs/swiper-bundle.min.js"></script>
+    <script src="../assets/libs/simplebar.min.js"></script>
+    <script src="../assets/js/script.js"></script>
+    <script src="../assets/js/swiper.js"></script>
+</body>
+</html>

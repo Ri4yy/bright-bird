@@ -2,19 +2,69 @@
 
 html,
 body {
-    font-family: '';
+    font-family: $font-family;
     scroll-behavior: smooth;
-}
-
+    color: var(--main-text);
+    background: #FAFAFA;
+} 
+ 
 // Заголовки
 h1 {
-    color: $main-color;
+    font-weight: 400;
+    font-size: 3.25rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--main-text);
+
+    @media(max-width: $breakpoint768) {
+        font-size: 2.25rem;
+    }
+    @media(max-width: $breakpoint480) {
+        font-size: 1.5rem;
+    }
+
+    & span {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--accent-color);
+        }
+    }
 }
-h2 {
-    color: $main-color;
-}
-h3 {
-    color: $main-text;
+h2, .h2 {
+    font-weight: 400;
+    font-size: 2.25rem;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--main-text);
+
+    & span {
+        position: relative;
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--accent-color);
+        }
+    }
+
+    @media(max-width: $breakpoint768) {
+        font-size: 2rem;
+    }
+    @media(max-width: $breakpoint480) {
+        font-size: 1.5rem;
+        text-align: center;
+    }
 }
 
 // База
@@ -23,11 +73,16 @@ h3 {
     width: 100%;
     margin: 0 auto;
 
+    &__top {
+        display: flex;
+        justify-content: center;
+    }
+
     &__inner {
         margin-top: 40px;
 
-        @media(max-width: $breakpoint768) {
-            margin-top: 24px;
+        @media(max-width: $breakpoint480) {
+            margin-top: 32px;
         }
     }
 
@@ -38,22 +93,110 @@ h3 {
         padding: 0 $padding-sm;
     }
 }
+
 .section {
-    margin-top: $section-top;
+    padding: 80px 0;
 
     @media(max-width: $breakpoint768) {
-        margin-top: 90px;
+        padding: 60px 0;
+    }
+    @media(max-width: $breakpoint480) {
+        padding: 40px 0;
+    }
+}
+.section-medium {
+    padding: 40px 0;
+}
+.section-catalog {
+    padding: 0px 0px 40px 0;
+    
+    @media(max-width: $breakpoint768) {
+        padding: 40px 0;
+    }
+}
+.section-catalog-detail {
+    padding: 0px 0px 40px 0;
+
+    @media(max-width: $breakpoint768) {
+        margin-top: -10px;
+    }
+}
+.section-vacancies {
+    padding: 40px 0 140px;
+
+    @media(max-width: $breakpoint768) {
+        padding: 40px 0;
+    }
+}
+.section-contacts {
+    padding: 40px 0 180px;
+
+    @media(max-width: $breakpoint768) {
+        padding: 40px 0;
+    }
+}
+.section-breadcrumb {
+    padding: 40px 0;
+
+    @media(max-width: $breakpoint1024) {
+        padding: 20px 0;
+    }
+    @media(max-width: $breakpoint768) {
+        display: none;
+    }
+}
+.section-title {
+    padding-top: 48px;
+
+    @media(max-width: $breakpoint768) {
+        padding: 30px 0;
+    }
+
+    & h1 {
+        @media(max-width: $breakpoint992) {
+            font-size: 2.25rem;
+        }
+        @media(max-width: $breakpoint768) {
+            font-size: 2rem;
+        }
+        @media(max-width: $breakpoint480) {
+            font-size: 1.5rem;
+            text-align: center;
+        }
+
+        & span {
+            @media(max-width: $breakpoint992) {
+                font-size: 1.75rem;
+            }
+            @media(max-width: $breakpoint768) {
+                font-size: 1.5rem;
+            }
+            @media(max-width: $breakpoint480) {
+                display: block;
+                font-size: 1.25rem;
+            }
+        }
     }
 }
 
-.left-padding {
-    padding-left: calc((100vw - $section-top) / 2);
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 3;
 
-    @media(max-width: $container-width) {
-        padding-left: $padding-md;
-    }
-    @media(max-width: $breakpoint768) {
-        padding-left: $padding-sm;
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
     }
 }
 

@@ -1,0 +1,68 @@
+.contacts {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+        gap: 20px;
+
+        @media(max-width: $breakpoint480) {
+            gap: 12px;
+        }
+    }
+    &__item {
+        border: 1px solid rgba(40, 0, 0, 0.2);
+        border-radius: 12px;
+        padding: 16px 32px;
+        background: #fff;
+
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        &-title {
+            font-weight: 600;
+            font-size: 1.25rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            text-align: center;
+
+            @media(max-width: $breakpoint480) {
+                font-size: 1rem;
+            }
+        }
+        &-content {
+            margin-top: 20px;
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 6px;
+
+            @media(max-width: $breakpoint480) {
+                margin-top: 16px;
+            }
+        }
+        &-link {
+            font-weight: 600;
+            font-size: 1.5rem;
+            text-decoration: underline;
+            text-align: center;
+            color: var(--accent-color);
+
+            @media(max-width: $breakpoint480) {
+                font-size: 1.25rem;
+            }
+        }
+        &-text {
+            font-weight: 400;
+            font-size: 1.5rem;
+            text-align: center;
+            color: rgba(40, 0, 0, 0.4);
+        }
+
+        &-social {
+            display: flex;
+            align-items: center;
+            gap: 24px;
+        }
+    }
+}

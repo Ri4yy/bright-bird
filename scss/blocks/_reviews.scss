@@ -1,0 +1,116 @@
+.reviews {
+
+}
+
+.reviews-swiper {
+    padding: 16px;
+    margin: -16px;
+
+    &:hover {
+        .reviews-swiper__btn {
+            opacity: 1;
+            top: 50%;
+        }
+    }
+
+    &__btn  {
+        position: absolute;
+        top: calc(50% + 10px);
+        transform: translateY(-50%);
+        z-index: 2;
+
+        cursor: pointer;
+
+        width: 64px;
+        height: 64px;
+
+        border-radius: 6px;
+        background: var(--main-color);
+        box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        opacity: 0;
+        transition: opacity 0.3s ease-in-out, top 0.3s ease-in-out;
+
+        &--next {
+            right: 16px;
+        }
+        &--prev {
+            left: 16px;
+        }
+    }
+}
+
+.review-card {
+    position: relative;
+    border-radius: 20px;
+    overflow: hidden;
+    cursor: pointer;
+
+    height: 515px;
+
+    @media(max-width: $breakpoint600) {
+        height: 320px;
+    }
+
+    & iframe {
+        height: inherit;
+        width: 100%;
+    }
+
+    &__thumb {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        display: block;
+        transition: transform 0.5s ease;
+    }
+
+    &__play {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 112px;
+        height: 112px;
+        background: rgba(255, 229, 244, 0.56);
+        border-radius: 50%;
+        display: flex; 
+        align-items: center;
+        justify-content: center;
+        backdrop-filter: blur(4px);
+        transition: background-color 0.3s ease, border-color 0.3s ease;
+        padding: 0;
+
+        @media(max-width: $breakpoint600) {
+            width: 75px;
+            height: 75px;
+        }
+
+        svg {
+            margin-left: 10px;
+            
+            width: 46px;
+            height: 52px;
+            fill: #FFF;
+
+            @media(max-width: $breakpoint600) {
+                width: 28px;
+                margin-left: 6px;
+            }
+        }
+    }
+
+    &:hover {
+        .review-card__thumb {
+            transform: scale(1.05);
+        }
+        .review-card__play {
+            background: var(--main-color, #009FD9);
+            border-color: var(--main-color, #009FD9);
+        }
+    }
+}

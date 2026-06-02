@@ -1,0 +1,95 @@
+.vacancies {
+    &__wrapper {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(500px, 1fr));
+        gap: 20px;
+
+        @media(max-width: $breakpoint600) {
+            grid-template-columns: 1fr;
+        }
+    }
+    &__item {
+        border: 1px solid rgba(40, 0, 0, 0.2);
+        border-radius: 12px;
+        padding: 20px 32px;
+        background: #fff;
+
+        display: flex;
+        gap: 24px;
+
+        @media(max-width: $breakpoint600) {
+            padding: 16px;
+            gap: 12px;
+        }
+        @media(max-width: $breakpoint375) {
+            flex-direction: column;
+        }
+
+        &-icon {
+            width: 145px;
+            height: 145px;
+            border-radius: 50%;
+            background: var(--main-text);
+
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            @media(max-width: $breakpoint600) {
+                width: 100px;
+                height: 100px;
+            }
+
+            & img {
+                @media(max-width: $breakpoint600) {
+                    max-width: 50px;
+                }
+            }
+        }
+
+        &-title {
+            font-weight: 600;
+            font-size: 1.25rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            color: var(--main-text);
+
+            @media(max-width: $breakpoint600) {
+                font-size: 1rem;
+                text-align: left;
+            }
+
+            & a {
+                text-decoration: underline !important;
+                color: var(--main-text);
+            }
+        }
+        &-bottom {
+            margin-top: 20px;
+
+            @media(max-width: $breakpoint600) {
+                margin-top: 12px;
+            }
+        }
+        &-text {
+            font-weight: 400;
+            font-size: 1rem;
+            color: var(--main-text-2);
+
+            @media(max-width: $breakpoint600) {
+                font-size: 0.875rem;
+            }
+        }
+        &-link {
+            font-weight: 400;
+            font-size: 1rem;
+            text-decoration: underline !important;
+            color: var(--accent-color);
+
+            @media(max-width: $breakpoint600) {
+                font-size: 0.875rem;
+            }
+        }
+    }
+}

@@ -1,0 +1,60 @@
+.sidebar {
+
+    @media(max-width: $breakpoint768) {
+        padding: 48px 0 32px 0;
+    }        
+    @media(max-width: $breakpoint600) {
+        padding: 24px 0 20px 0;
+    }
+
+    &__breadcrumbs {
+        padding: 30px 0 32px;
+
+        @media(max-width: $breakpoint768) {
+            display: none;
+        }
+    }
+
+    &__menu {
+        display: flex;
+        flex-direction: column;
+
+        @media(max-width: $breakpoint768) {
+            flex-direction: row;
+        }        
+        @media(max-width: $breakpoint600) {
+            flex-direction: column;
+            gap: 6px;
+        }
+
+        &-item {
+            @media(max-width: $breakpoint768) {
+                display: flex;
+                justify-content: center;
+                flex-grow: 1;
+            }
+        }
+        &-link {
+            display: block;
+            padding: 12px 24px;
+
+            font-weight: 600;
+            font-size: 1.25rem;
+            text-transform: uppercase;
+            color: var(--main-text);
+
+            @media(max-width: $breakpoint768) {
+                text-align: center;
+                width: 100%;
+                padding: 12px 0;
+            }
+            @media(max-width: $breakpoint480) {
+                font-size: 1rem;
+            }
+
+            &--active {
+                color: var(--accent-color);
+            }
+        }
+    }
+}

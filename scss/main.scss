@@ -4,10 +4,15 @@
 @import "./base/base";
 // Blocks
 @import "./blocks/header";
+@import "./blocks/footer";
 @import "./blocks/modal";
 @import "./blocks/menu";
 @import "./blocks/menu-nav";
 @import "./blocks/btn";
+@import "./blocks/breadcrumb";
+@import "./blocks/sections";
+@import "./blocks/sidebar";
+@import "./blocks/ui";
 // Custom
 @import "./blocks/custom-checkbox";
 @import "./blocks/custom-radio";
@@ -15,3 +20,40 @@
 @import "./blocks/accordion";
 @import "./blocks/tabs";
 
+// Overlays
+@import "./blocks/catalog-menu";
+@import "./blocks/basket";
+@import "./blocks/auth-modal";
+@import "./blocks/search-modal";
+
+// Main page
+@import "./blocks/hero";
+@import "./blocks/about-brand";
+@import "./blocks/main-sections";
+@import "./blocks/new-collection";
+@import "./blocks/catalog";
+@import "./blocks/hits-sales";
+@import "./blocks/reviews";
+
+// Info page
+@import "./blocks/info-block";
+@import "./blocks/vacancies";
+@import "./blocks/contacts";
+@import "./blocks/not-found";
+
+// Catalog page
+@import "./blocks/filter";
+@import "./blocks/filter-panel";
+@import "./blocks/catalog-main";
+@import "./blocks/pagination";
+
+// Catalog detail page
+@import "./blocks/catalog-detail";
+
+// Profile page
+@import "./blocks/profile";
+@import "./blocks/order-details";
+
+// Cart page
+@import "./blocks/cart";
+@import "./blocks/order";

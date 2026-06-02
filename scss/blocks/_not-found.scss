@@ -1,0 +1,44 @@
+.not-found {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+
+    min-height: 600px;
+
+    @media(max-width: $breakpoint480) {
+        min-height: 360px;
+    }
+
+    &__img {
+        max-width: 540px;
+        width: 100%;
+    }
+    &__title {
+        font-weight: 600;
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        text-align: center;
+
+        @media(max-width: $breakpoint480) {
+            font-size: 1rem;
+        }
+    }
+    &__link {
+        display: block;
+
+        padding: 24px;
+        max-width: 460px;
+        width: 100%;
+
+        font-size: 1.25rem;
+        text-align: center;
+        color: var(--main-text);
+
+        @media(max-width: $breakpoint480) {
+            padding: 16px;
+            font-size: 1rem;
+        }
+    }
+}

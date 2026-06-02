@@ -1,0 +1,276 @@
+.hero {
+    height: 910px;
+
+    @media(max-width: $breakpoint600) {
+        height: 790px;
+    }
+
+    &__wrapper {
+        height: inherit;
+
+        position: relative;
+    }
+    &__contacts {
+        position: absolute;
+        right: calc((100% - $container-width) / 2);
+        bottom: 0;
+        z-index: 2;
+        transition: bottom 350ms ease;
+
+        @media(max-width: $container-width) {
+            right: 32px;
+        }
+        @media(max-width: $breakpoint768) {
+            bottom: 54px;
+        }
+        @media(max-width: $breakpoint600) {
+            right: 16px;
+            bottom: 24px;
+        }
+
+        &.is-open {
+            bottom: -74px;
+        }
+    }
+} 
+ 
+.hero-swiper {
+    height: inherit;
+
+    &__slide {
+        background-image: var(--main-bg);
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        
+        height: 100%;
+
+        & .container {
+            height: 100%;
+        }
+
+        @media(max-width: $breakpoint768) {
+            background-image: var(--md-bg);
+        }
+        @media(max-width: $breakpoint480) {
+            background-image: var(--main-xs);
+        }
+    }
+
+    &__pagination {
+        bottom: 40px !important;
+        top: auto !important;
+
+        display: flex;
+        justify-content: center;
+        gap: 12px;
+
+        @media(max-width: $breakpoint600) {
+            bottom: 24px !important;
+        }
+
+        & .swiper-pagination-bullet {
+            width: 20px;
+            height: 20px;
+            margin: 0 !important;
+
+            border: 1px solid #fff;
+            background: transparent;
+            opacity: 1;
+
+            &-active {
+                background: #ffe5f4;
+            }
+
+            @media(max-width: $breakpoint600) {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+
+    &__content {
+        position: relative;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        height: 100%;
+    }
+
+    &__title {
+        position: relative;
+
+        font-weight: 400;
+        font-size: 2.5rem;
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+        color: #fff;
+
+        @media(max-width: $breakpoint600) {
+            font-size: 2rem;
+        }
+        @media(max-width: $breakpoint480) {
+            font-size: 1.75rem;
+        }
+        @media(max-width: $breakpoint375) {
+            font-size: 1.5rem;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 145px;
+            height: 1px;
+            background: var(--accent-color);
+        }
+    }
+
+    &__btn-wrapper {
+        display: flex;
+        justify-content: center;
+
+        position: absolute;
+        bottom: 190px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 100%;
+
+        @media(max-width: $breakpoint768) {
+            bottom: 285px;
+        }
+        @media(max-width: $breakpoint600) {
+            bottom: 240px;
+        }
+    }
+    &__btn {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+
+        flex-shrink: 0;
+        border-radius: 12px;
+        padding: 21px 42px;
+
+        @media(max-width: $breakpoint600) {
+            padding: 16px 32px;
+        }
+
+        &-text {
+            font-family: $font-family-secondary;
+            font-weight: 700;
+            font-size: 1.25rem;
+            color: var(--main-text);
+
+            @media(max-width: $breakpoint375) {
+                font-size: 1rem;
+            }
+        }
+    }
+}
+
+.contacts-block {
+    &__wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    &__main {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        width: 166px;
+        height: 142px;
+
+        cursor: pointer;
+        aspect-ratio: 166 / 142;
+
+        @media(max-width: $breakpoint600) {
+            width: 115px;
+            height: 98px;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background-image: url('../assets/img/icons/i-contacts-heart.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: drop-shadow(0 16px 16px rgba(0, 0, 0, 0.25));
+        }
+        &-title {
+            font-family: $font-family-secondary;
+            font-weight: 700;
+            font-size: 1.25rem;
+            letter-spacing: 0.04em;
+            text-transform: uppercase;
+            z-index: 3;
+
+            @media(max-width: $breakpoint600) {
+                font-size: 0.875rem;
+            }
+        }
+    }
+    
+    &__social {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        width: 120px;
+        height: 102px;
+
+        @media(max-width: $breakpoint600) {
+            width: 90px;
+            height: 76px;
+        }
+
+        // hidden by default
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+        transform: translateY(18px);
+        transition:
+            opacity 260ms ease,
+            transform 260ms ease,
+            visibility 0ms linear 260ms;
+
+        &.is-visible {
+            opacity: 1;
+            visibility: visible;
+            pointer-events: auto;
+            transform: translateY(0);
+            transition:
+                opacity 260ms ease,
+                transform 260ms ease,
+                visibility 0ms;
+        }
+
+        &::before {
+            content: '';
+            position: absolute;
+            width: inherit;
+            height: inherit;
+            background-image: url('../assets/img/icons/i-contacts-heart-xs.png');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            filter: drop-shadow(0 16px 16px rgba(0, 0, 0, 0.25));
+        }
+
+        &-item {
+            z-index: 3;
+        }
+    }
+}

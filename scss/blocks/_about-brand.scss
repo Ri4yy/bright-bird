@@ -1,0 +1,223 @@
+.about-brand {
+
+    &__wrapper {
+        display: flex;
+        gap: 44px;
+
+        @media(max-width: $breakpoint1024) {
+            flex-direction: column;
+            gap: 32px;
+        }
+    }
+    &__info {
+        width: 60%;
+
+        @media(max-width: $breakpoint1024) {
+            width: 100%;
+        }
+    }
+    &__content {
+        margin-top: 36px;
+
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+
+        @media(max-width: $breakpoint1024) {
+            gap: 36px;
+        }
+        @media(max-width: $breakpoint768) {
+            margin-top: 20px;
+        }
+    }
+    &__title {
+        font-family: $font-family-secondary;
+        font-weight: 700;
+        font-size: 2.875rem;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+
+        @media(max-width: $breakpoint1024) {
+            font-size: 2.5rem;
+        }
+        @media(max-width: $breakpoint768) {
+            font-size: 2rem;
+        }
+        @media(max-width: $breakpoint375) {
+            font-size: 1.5rem;
+        }
+    }
+    &__text {
+        font-weight: 500;
+        font-size: 1.5rem;
+
+        @media(max-width: $breakpoint768) {
+            font-size: 1.25rem;
+        }
+        @media(max-width: $breakpoint375) {
+            font-size: 1rem;
+        }
+
+        & span {
+            color: var(--accent-color);
+        }
+    }
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 16px;
+
+        &-item {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            &::before {
+                content: url("../assets/img/icons/i-heart.svg");
+            }
+        }
+        &-text {
+            font-weight: 500;
+            font-size: 1.5rem;
+
+            @media(max-width: $breakpoint768) {
+                font-size: 1.25rem;
+            }
+            @media(max-width: $breakpoint375) {
+                font-size: 1rem;
+            }
+        }
+    }
+    &__slider {
+        position: relative;
+        width: 40%;
+        height: 480px;
+
+        background: var(--main-color);
+        display: flex;
+        gap: 16px;
+
+        @media(max-width: $breakpoint1024) {
+            width: 100%;
+            // max-width: 770px;
+        }
+        @media(max-width: $breakpoint768) {
+            height: 420px;
+        }
+
+        &-btns {
+            margin-top: auto;
+            display: flex;
+            align-items: center;
+
+            @media(max-width: $breakpoint480) {
+                position: absolute;
+                right: 14px;
+                bottom: 14px;
+                gap: 6px;
+
+                z-index: 2;
+            }
+        }
+        &-btn {
+            width: 64px;
+            height: 64px;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+
+            & svg {
+                fill: var(--accent-color);
+
+                @media(max-width: $breakpoint480) {
+                    width: 20px;
+                }
+            }
+            &.swiper-button-disabled {
+                opacity: 0.3;
+            }
+
+            @media(max-width: $breakpoint480) {
+                width: 44px;
+                height: 44px;
+
+                border-radius: 6px;
+                background: var(--main-color);
+                box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
+            }
+        }
+    }
+}
+
+.gallery-swiper {
+    --peek: 15%;
+
+    flex: 1;
+    min-width: 0;
+    overflow: hidden;
+
+    @media(max-width: $breakpoint1024) {
+        --peek: 40%;
+    }
+    @media(max-width: $breakpoint480) {
+        --peek: 0;
+    }
+
+    &__slide {
+        overflow: visible;
+    }
+
+    &__card {
+        position: relative;
+        width: 100%;
+        height: 100%;
+
+        &::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: var(--main-color);
+            opacity: 0;
+            transition: opacity 0.6s ease;
+            pointer-events: none;
+        }
+    }
+
+    &__img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: width 0.6s ease;
+    }
+
+    .swiper-slide-next {
+        z-index: 1 !important;
+        opacity: 1 !important;
+        pointer-events: none;
+
+        .gallery-swiper__card::after {
+            opacity: 0.45;
+        }
+    }
+
+    .swiper-slide-active {
+        z-index: 2 !important;
+
+        .gallery-swiper__card {
+            width: calc(100% - var(--peek));
+        }
+    }
+
+    .swiper-slide-active:last-child .gallery-swiper__card {
+        width: 100%;
+    }
+
+    .swiper-slide-prev {
+        z-index: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden;
+    }
+}
