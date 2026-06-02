@@ -617,10 +617,10 @@
     }
     &__status {
         width: 100%;
-        overflow-x: scroll;
+        overflow-x: auto;
 
         &-wrapper {
-            width: 800px;
+            width: 800px; 
         }
         &-list {
 

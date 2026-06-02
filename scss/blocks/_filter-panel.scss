@@ -41,8 +41,8 @@
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
-            transition: opacity .3s, visibility .3s, pointer-events .3s;
-            transform: translateY(-4px);
+            transition: opacity .3s, visibility .3s, pointer-events .3s, transform .3s;
+            transform: translateY(-8px);
 
             position: absolute;
             top: 70px;
@@ -106,8 +106,8 @@
             opacity: 0;
             visibility: hidden;
             pointer-events: none;
-            transition: opacity .3s, visibility .3s, pointer-events .3s;
-            transform: translateY(-4px);
+            transition: opacity .3s, visibility .3s, pointer-events .3s, transform .3s;
+            transform: translateY(-8px);
 
             position: absolute;
             top: 70px;
