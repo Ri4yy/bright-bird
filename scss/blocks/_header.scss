@@ -158,7 +158,7 @@
         @media(max-width: $breakpoint600) {
             gap: 12px;
         }
-    }
+    } 
 
     &__search, &__login {
 
@@ -176,6 +176,10 @@
 
             &--mobile {
                 display: flex;
+
+                & svg {
+                    stroke: var(--main-text) !important;
+                }
             }
 
             & svg {
@@ -185,7 +189,7 @@
 
             &:hover {
                 & svg {
-                    stroke: var(--accent-color);
+                    stroke: var(--accent-color) !important;
                 }
                 & span {
                     color: var(--accent-color);

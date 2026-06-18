@@ -127,6 +127,8 @@
         height: 100%;
         width: 100%;
         overflow: hidden;
+        
+        max-height: 620px;
     }
     &__img {
         width: 100%;
@@ -140,13 +142,18 @@
     }
     &__favorite-btn {
         display: flex;
-
+ 
         position: absolute;
         top: 26px;
         right: 20px;
 
         & svg {
             stroke: #FFF;
+        }
+
+        &.is-active svg {
+            fill: #FFE5F4;
+            stroke: #FFE5F4;
         }
 
         &:hover {
@@ -172,38 +179,22 @@
             color: var(--accent-color);
         }
     }
-    &__price {
+    &__price-wrapper {
         margin-top: 8px;
 
+        display: flex;
+        gap: 16px;
+    }
+    &__price {
         font-weight: 400;
         font-size: 1.5rem;
         color: var(--main-text-2);
-    }
 
-    &__sizes {
-        &-wrapper {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-        }
-        &-list {
-            display: flex;
-            gap: 40px;
-            width: max-content;
-        }
-        &-item {
-            flex-shrink: 0;
-
-            padding: 12px 20px;
-            border-radius: 7px;
-            box-shadow: 0 4px 4px 0 rgba(0, 0, 0, 0.25);
-            background: #fff;
-
-            & span {
-                font-weight: 600;
-                font-size: 1.25rem;
-            }
+        &-old {
+            font-weight: 400;
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            color: rgba(40, 0, 0, 0.4);
         }
     }
 }

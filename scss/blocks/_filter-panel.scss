@@ -206,8 +206,14 @@
         }
     }
 
+    &:not(:has(.properties-SIZES_CLOTHES)) {
+        & .properties-COLOR_REF {
+            grid-column: 1 / -1;
+        }
+    }
+ 
     &__item {
-        &.properties-section {
+        &.properties-SECTION {
             grid-column: 1 / -1;
 
             & .filter-dropdown__list {
@@ -223,7 +229,7 @@
                 }
             }
         }
-        &.properties-size {
+        &.properties-SIZES_CLOTHES {
             grid-column: 1 / 2;
 
             @media(max-width: $breakpoint600) {
@@ -243,7 +249,7 @@
                 }
             }
         }
-        &.properties-color {
+        &.properties-COLOR_REF {
             grid-column: 2 / -1;
 
             @media(max-width: $breakpoint600) {
@@ -303,6 +309,7 @@
         font-weight: 500;
         font-size: 1.25rem;
         text-transform: uppercase;
+        cursor: pointer;
 
         @media(max-width: $breakpoint600) {
             font-size: 1rem;
@@ -315,4 +322,68 @@
     &__reset {
         color: rgba(40, 0, 0, 0.4);
     }
+}
+
+.bx-filter-param-btn-inline {
+    .bx-filter-param-label {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+
+        &.bx-active {
+            .bx-filter-param-btn {
+                border-image: unset;
+                border-color: var(--main-text);
+
+                .bx-filter-btn-color-icon {
+                    width: 16px;
+                    height: 16px;
+                    border-radius: 2px;
+                    transform: translateY(1px);
+                }
+            }
+        }
+    }
+}
+
+.bx-filter-param-btn {
+    display: inline-block;
+    width: 28px;
+    height: 28px;
+    text-align: center;
+    border-style: solid;
+    border-width: 1px;
+    border-color: rgba(40, 0, 0, 0.7);
+    border-radius: 2px;
+    background: #fff;
+    position: relative;
+    transition: border .3s ease, box-shadow .1s ease, color .3s ease;
+    cursor: pointer;
+
+    &:hover {
+        border-image: unset;
+        border-color: var(--main-text);
+    }
+
+    .bx-filter-btn-color-icon {
+        display: inline-block;
+        width: 100%;
+        height: 100%;
+        vertical-align: middle;
+        box-shadow: inset 0 0 0 1px rgba(0, 0, 0, .05);
+        background-size: cover;
+    }
+}
+
+.bx-retina {
+    .bx-filter-param-btn:hover {
+        border-image: unset !important;
+        border-color: var(--main-text) !important;
+    }
+}
+
+.bx-filter-param-text {
+    font-weight: 400;
+    font-size: 1.25rem;
+    color: var(--main-text);
 }

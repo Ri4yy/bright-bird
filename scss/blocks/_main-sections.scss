@@ -13,8 +13,8 @@
 }
 
 .main-sections-swiper {
-    padding: 16px;
-    margin: -16px 0 -16px -16px;
+    padding: 16px !important;
+    margin: -16px 0 -16px -16px !important;
 
     &__slide {
         display: flex;
