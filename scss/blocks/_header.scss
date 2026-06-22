@@ -28,6 +28,14 @@
         @media(max-width: $breakpoint600) {
             max-width: 174px;
         }
+
+        & img {
+            max-height: 56px;
+
+            @media(max-width: $breakpoint600) {
+                max-height: 40px;
+            }
+        }
     }
 
     &__catalog-btn {

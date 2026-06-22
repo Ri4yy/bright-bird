@@ -352,6 +352,14 @@ h2 span::before, .h2 span::before {
     max-width: 174px;
   }
 }
+.header__logo img {
+  max-height: 56px;
+}
+@media (max-width: 600px) {
+  .header__logo img {
+    max-height: 40px;
+  }
+}
 .header__catalog-btn {
   display: flex;
   align-items: center;
